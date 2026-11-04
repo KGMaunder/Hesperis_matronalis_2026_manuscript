@@ -1,0 +1,11 @@
+population,urbaness,lat,long,SQM,sun
+KR1,rural,44.377585,-76.706361,21.57,field
+KR2,rural,44.406707,-76.544971,21.54,forest
+KR3,rural,44.486408,-76.481282,21.78,forest
+KR4,rural,44.304480,-76.334824,21.37,forest
+KR5,rural,44.566389,-76.548056,21.89,field
+KU1,urban,44.267470,-76.494277,19.36,field
+KU2,urban,44.291751,-76.629529,20.79,field
+KU3,urban,44.259391,-76.542953,19.31,field
+KU4,urban,44.238250,-76.558857,19.17,forest
+KU5,urban,44.253217,-76.482854,19.63,forest

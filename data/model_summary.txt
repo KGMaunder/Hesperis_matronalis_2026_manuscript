@@ -1,0 +1,38 @@
+ Family: zero_one_inflated_beta 
+  Links: mu = logit; zoi = logit; coi = logit 
+Formula: seed_survival_trunk ~ NSB + sup_pollen + scale(median_mean_ref) + (1 | plant_id) 
+         zoi ~ NSB + sup_pollen + scale(median_mean_ref) + (1 | plant_id)
+         coi ~ NSB + sup_pollen + scale(median_mean_ref) + (1 | plant_id)
+   Data: pollen_singular (Number of observations: 660) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Multilevel Hyperparameters:
+~plant_id (Number of levels: 289) 
+                  Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)         0.51      0.05     0.41     0.62 1.00     1062     1574
+sd(zoi_Intercept)     1.00      0.32     0.30     1.59 1.01      484      596
+sd(coi_Intercept)     1.24      0.95     0.05     3.47 1.00      819      766
+
+Regression Coefficients:
+                         Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept                   -4.51      0.81    -6.14    -2.92 1.00     3287     2818
+zoi_Intercept                2.16      2.29    -2.40     6.65 1.00     3826     2957
+coi_Intercept               -8.68      8.72   -27.54     7.37 1.00     3096     2203
+NSB                         -0.17      0.04    -0.25    -0.10 1.00     3258     2745
+sup_pollenP                 -0.00      0.09    -0.18     0.17 1.00     2214     1361
+scalemedian_mean_ref        -0.01      0.04    -0.10     0.08 1.00     2952     2667
+zoi_NSB                      0.21      0.11    -0.01     0.44 1.00     3561     2935
+zoi_sup_pollenP              0.44      0.25    -0.04     0.95 1.00     3867     2952
+zoi_scalemedian_mean_ref     0.07      0.13    -0.19     0.34 1.00     4338     2757
+coi_NSB                     -0.24      0.41    -1.10     0.54 1.00     2967     1992
+coi_sup_pollenP             -0.15      0.76    -1.63     1.41 1.00     5039     2462
+coi_scalemedian_mean_ref    -0.01      0.48    -0.95     0.97 1.00     3330     1967
+
+Further Distributional Parameters:
+    Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+phi     7.66      0.62     6.49     8.92 1.00     1650     2404
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).

@@ -67,8 +67,8 @@ $- brms_model_summary.txt (created in 01_Manuscript_Analysis_Feb_2026.R)
 	-> the uncleaned fitness data for all the plants in the pollen supplement experiment
 @- pre_specs_all.csv (created and then used in i_Creating_specs_all.R)
 	-> same spec info as specs_all.csv, but columns don't include plant_id info
-#- Raw_Spec_Hesp_2023.zip(used in i_Creating_specs_all.R)
-	-> zip file of all raw spectra reflectance data, each spectra is an individual file, (7500 .txt files total)
+#- Raw_Spec_Hesp_2023.7z(used in i_Creating_specs_all.R)
+	-> compressed file of all raw spectra reflectance data, each spectra is an individual file, (7500 .txt files total)
 !- reflectance.csv (created in iii_Creating_reflectance.R, used in 01_Manuscript_Analysis_Feb_2026.R)
 	-> univariate measure of colour calculated by taking the average reflectance of light between 330 and 630 nm for each petal (three per plant_id)
 $- selection_differentials.csv (created in 01_Manuscript_Analysis_Feb_2026.R)

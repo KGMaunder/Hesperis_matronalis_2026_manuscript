@@ -10,28 +10,28 @@ Formula: seed_survival_trunk ~ NSB + sup_pollen + scale(median_mean_ref) + (1 | 
 Multilevel Hyperparameters:
 ~plant_id (Number of levels: 289) 
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)         0.51      0.05     0.41     0.62 1.00     1062     1574
-sd(zoi_Intercept)     1.00      0.32     0.30     1.59 1.01      484      596
-sd(coi_Intercept)     1.24      0.95     0.05     3.47 1.00      819      766
+sd(Intercept)         0.51      0.06     0.40     0.62 1.00     1048     1997
+sd(zoi_Intercept)     1.00      0.31     0.31     1.58 1.01      594      564
+sd(coi_Intercept)     1.21      0.97     0.05     3.57 1.01      762     1562
 
 Regression Coefficients:
                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept                   -4.51      0.81    -6.14    -2.92 1.00     3287     2818
-zoi_Intercept                2.16      2.29    -2.40     6.65 1.00     3826     2957
-coi_Intercept               -8.68      8.72   -27.54     7.37 1.00     3096     2203
-NSB                         -0.17      0.04    -0.25    -0.10 1.00     3258     2745
-sup_pollenP                 -0.00      0.09    -0.18     0.17 1.00     2214     1361
-scalemedian_mean_ref        -0.01      0.04    -0.10     0.08 1.00     2952     2667
-zoi_NSB                      0.21      0.11    -0.01     0.44 1.00     3561     2935
-zoi_sup_pollenP              0.44      0.25    -0.04     0.95 1.00     3867     2952
-zoi_scalemedian_mean_ref     0.07      0.13    -0.19     0.34 1.00     4338     2757
-coi_NSB                     -0.24      0.41    -1.10     0.54 1.00     2967     1992
-coi_sup_pollenP             -0.15      0.76    -1.63     1.41 1.00     5039     2462
-coi_scalemedian_mean_ref    -0.01      0.48    -0.95     0.97 1.00     3330     1967
+Intercept                   -4.52      0.79    -6.06    -2.98 1.00     2428     2941
+zoi_Intercept                2.17      2.29    -2.36     6.74 1.00     3398     2736
+coi_Intercept               -8.56      8.99   -28.40     7.34 1.00     4095     2710
+NSB                         -0.17      0.04    -0.25    -0.10 1.00     2393     2989
+sup_pollenP                  0.00      0.09    -0.18     0.18 1.00     2470     2702
+scalemedian_mean_ref        -0.00      0.04    -0.09     0.08 1.00     2511     2981
+zoi_NSB                      0.21      0.11    -0.00     0.44 1.00     3166     2641
+zoi_sup_pollenP              0.42      0.26    -0.08     0.95 1.00     3526     3013
+zoi_scalemedian_mean_ref     0.08      0.13    -0.17     0.34 1.00     3445     2700
+coi_NSB                     -0.24      0.43    -1.15     0.52 1.00     4274     3021
+coi_sup_pollenP             -0.14      0.73    -1.56     1.38 1.00     4313     2831
+coi_scalemedian_mean_ref    -0.02      0.47    -0.97     0.92 1.00     4294     2532
 
 Further Distributional Parameters:
     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-phi     7.66      0.62     6.49     8.92 1.00     1650     2404
+phi     7.61      0.63     6.44     8.93 1.00     1428     2424
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential

@@ -14,23 +14,23 @@ Note: i, ii, iii, and iv scripts process data and the data frames used in the fi
 Description of R Scripts 
 
 i_Creating_specs_all
-- doesn’t need to be run (creates the file “specs_all.csv”)
+- creates the file “specs_all.csv”
 - combines all individual spec readings into one dataset
 
 ii_Creating_sliced_specs
-- doesn’t need to be run (creates the file “sliced_specs_all.csv”)
+- creates the file “sliced_specs_all.csv”
 - this data is a legacy from older approaches for calculating a single estimate of colour using reflectance at peaks
 - creates dataset with the reflectance values for the spec peaks and valleys at wavelengths 435, 560, and 690
 - kept to allow comparison between colour estimating methods
 
 iii_Creating_reflectance.R
-- doesn’t need to be run (creates the file “reflectance.csv”)
+- creates the file “reflectance.csv”
 - a PCA is run, and determines that reflectance across 430-630 contribute fairly equally to PC1
 - thus calculate mean reflectance across this range as a single estimate of colour 
 - also tells us that main difference between white, pink, and purple petals is brightness rather than hue
 
 iv_Creating_full_fit.R
-- doesn’t need to be run (creates the file “full_fit.csv” and "clean_pollen_fitness_measurements.csv")
+- creates the file “full_fit.csv” and "clean_pollen_fitness_measurements.csv"
 - data cleaning to correct mis-entered fitness data
 - combines absolute fitness measurement for all plants (i.e both those in the pollen supplement experiment and those not in it)
 - saves clean fitness data files for the pollen supplemental experiment and the full fitness data with all plants

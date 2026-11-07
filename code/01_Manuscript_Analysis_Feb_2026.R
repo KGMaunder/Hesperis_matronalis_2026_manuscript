@@ -226,7 +226,7 @@ p <- ggplot(freq_data, aes(NSB, prop, colour = score_colour, fill = score_colour
 p
   
 ###*manuscript fig ----
-#ggsave("plots/Fig_1A.pdf", plot = p, width = 7, height = 4, dpi = 300)
+ggsave("plots/Fig_1A.pdf", plot = p, width = 7, height = 4, dpi = 300)
 
 ##Figure 2: How does human colour assignment relate to spec measurements? Boxplot ----
 
@@ -245,7 +245,7 @@ p <- ggplot(singular_fit_spec, aes(score_colour, median_mean_ref)) +
   theme(axis.title = element_text(size = 14))
 p
 ###*manuscript fig ----
-#ggsave("plots/Fig_2.pdf", plot = p, width = 5, height = 6, dpi = 300)
+ggsave("plots/Fig_2.pdf", plot = p, width = 5, height = 6, dpi = 300)
 
 all <- lm(median_mean_ref ~ score_colour, data = singular_fit_spec)
 summary(all)
@@ -322,7 +322,7 @@ combined_plot <- patchwork::wrap_plots(plot_list, ncol = 3, axis_titles = "colle
 print(combined_plot)
 
 ###*manuscript fig ----
-#ggsave("plots/Fig_3.pdf", plot = combined_plot, width = 9, height = 6, dpi = 300)
+ggsave("plots/Fig_3.pdf", plot = combined_plot, width = 9, height = 6, dpi = 300)
 
 #Estimating the Strength of Selection on Flower Colour ----
 
@@ -383,7 +383,7 @@ strength <- results_df %>%
          sig_p_l = if_else(p_l < 0.05, "Yes", "No"),
          sig_p_q = if_else(p_q < 0.05, "Yes", "No")) 
 
-#write.csv(strength, "data/selection_differentials.csv", row.names = FALSE) 
+write.csv(strength, "data/selection_differentials.csv", row.names = FALSE) 
 
 
 ##Figure 4: Scatter plot of fitness against spec color measure for each population, with a linear & quadratic regression fit for significant cases ----
@@ -421,7 +421,7 @@ for (pop in unique_pops) {
 combined_plot <- wrap_plots(plot_list, ncol = 4, axis_titles = "collect")
 print(combined_plot)
 ###*manuscript fig ----
-#ggsave("plots/Fig_4.pdf", plot = combined_plot, width = 9, height = 7, dpi = 300)
+ggsave("plots/Fig_4.pdf", plot = combined_plot, width = 9, height = 7, dpi = 300)
 
 
 #Appendix A: Intact seeds  ----
@@ -445,7 +445,8 @@ model <- brm(
                coi ~ NSB + sup_pollen + scale(median_mean_ref) + (1|plant_id)), # probability of being one or a value other than one
   data = pollen_singular,
   prior = all_priors,
-  family = zero_one_inflated_beta())
+  family = zero_one_inflated_beta(),
+  control = list(adapt_delta = 0.99))
 
 plot(model)
 #plotting posterier distribution of the NSB parameter for zoi
@@ -455,7 +456,7 @@ summary(model) #"variable name" is the reporting of that variable on mu (the eff
 
 #saving text file of model summary
 summary_text <- capture.output(summary(model))
-#writeLines(summary_text, "model_summary.txt")
+#writeLines(summary_text, "data/brms_model_summary.txt")
 
 ###Appendix A Figure1: ----
 #plot for manuscript
@@ -481,7 +482,7 @@ p <- ggplot(ce_mu_df, aes(x = NSB, y = estimate__)) +
   xlim(-22, -19)
 p
 ####*manuscript fig ----
-#ggsave("plots/App_A_Fig_1.pdf", plot = p, width = 5, height = 4, dpi = 300)
+ggsave("plots/App_A_Fig_1.pdf", plot = p, width = 5, height = 4, dpi = 300)
 
 #reporting effect values for the predicted mean at the low and high ends of NSB
 ce_mu_df[1, c("NSB", "estimate__", "lower__", "upper__")]      # lowest NSB
@@ -502,7 +503,7 @@ p <- ggplot(pollen_singular, aes(length, bubbles)) +
 
 p
 ####*manuscript fig ----
-#ggsave("plots/App_B_Fig_1.pdf", plot = p, width = 8, height = 6, dpi = 300)
+ggsave("plots/App_B_Fig_1.pdf", plot = p, width = 8, height = 6, dpi = 300)
 
 #mod <- lm(bubbles ~ length, pollen_singular)
 #summary(mod) #slope is 2.038 (i.e. 2.024 bubbles per cm of fruit r^2 = 0.57)
@@ -556,5 +557,5 @@ combined_plot <- wrap_plots(plot_list, ncol = 4, axis_titles = "collect")
 print(combined_plot)
 
 ####*manuscript fig ----
-#ggsave("plots/App_B_Fig_2.pdf", plot = combined_plot, width = 9, height = 7, dpi = 300)
+ggsave("plots/App_B_Fig_2.pdf", plot = combined_plot, width = 9, height = 7, dpi = 300)
 
